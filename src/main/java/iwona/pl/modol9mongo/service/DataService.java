@@ -1,33 +1,27 @@
 package iwona.pl.modol9mongo.service;
 
-
 import iwona.pl.modol9mongo.model.Data;
 import iwona.pl.modol9mongo.repository.DataRepo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class DataService {
 
-    private static final String FILENAME = "D:\\Eryka\\PROGRAMOWANIE\\Spring-Boot-Akademia\\Homework\\modol9\\mockdata.csv";
+    private static final String FILENAME = "src/main/resources/mockdata.csv";
     private List<Data> dataList;
     private DataRepo dataRepo;
 
-    public DataService(DataRepo dataRepo) throws IOException {
+    public DataService(DataRepo dataRepo) {
         this.dataRepo = dataRepo;
-        dataList = new ArrayList<>();
-        readData();
-        addData();
+        this.dataList = new ArrayList<>();
     }
 
-    private void readData() {
+    public void readData() {
         BufferedReader read = null;
         String nextLine = null;
         int line = 0;
@@ -51,7 +45,7 @@ public class DataService {
         }
     }
 
-    private List<Data> addData(){
+    public List<Data> addData() {
         for (int i = 0; i < dataList.size(); i++) {
             dataList.get(i).getId();
             dataList.get(i).getFirstName();
@@ -62,4 +56,8 @@ public class DataService {
         }
         return dataRepo.saveAll(dataList);
     }
+
+//    public void findAll() {
+//    dataRepo.findAll();
+//    }
 }
