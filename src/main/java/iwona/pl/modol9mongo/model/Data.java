@@ -23,7 +23,7 @@ public class Data {
         this.ipAddress = ipAddress;
     }
 
-    public Data() {
+    public Data(String s) {
     }
 
     public String getEmail() {
