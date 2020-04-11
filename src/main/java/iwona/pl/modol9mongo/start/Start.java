@@ -1,9 +1,6 @@
 package iwona.pl.modol9mongo.start;
 
 
-import iwona.pl.modol9mongo.aspect.AfterStart;
-import iwona.pl.modol9mongo.aspect.AroundStart;
-import iwona.pl.modol9mongo.aspect.BeforeStart;
 import iwona.pl.modol9mongo.service.DataService;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -18,13 +15,13 @@ public class Start {
         this.dataService = dataService;
     }
 
-//    @BeforeStart
-//    @AfterStart
-    @AroundStart
     @EventListener(ApplicationReadyEvent.class)
     public void execute() {
-    dataService.readData();
-    dataService.addData();
+        dataService.deleteAll();
+        dataService.readData(); //3.0, 2.0, 3.0
+//        dataService.addData(); // 46.0
+        dataService.save(dataService.getDataList()); //103., 348.0
+        dataService.findAll();// 51.0, 55.0
     }
 
 
