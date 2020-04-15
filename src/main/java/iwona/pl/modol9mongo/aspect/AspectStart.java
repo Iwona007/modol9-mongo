@@ -14,26 +14,26 @@ import static java.lang.System.currentTimeMillis;
 @Component
 public class AspectStart {
 
-   private double  startTime;
+    private double startTime;
 
     @Before("@annotation(BeforeStart)")
-    public void beforeStart() {
+    private void beforeStart() {
         startTime = currentTimeMillis();
         System.out.println("start read: ");
     }
 
     @After("@annotation(AfterStart)")
-    public void afterStart() {
-      double duration = (currentTimeMillis() - startTime);
+    private void afterStart() {
+        double duration = (currentTimeMillis() - startTime);
         System.out.println("after read: " + duration);
     }
 
     @Around("@annotation(AroundStart)")
-    public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+    private void around(ProceedingJoinPoint joinPoint) throws Throwable {
         double start = currentTimeMillis();
         joinPoint.proceed();
         double end = currentTimeMillis();
-        double duration = (end-start);
+        double duration = (end - start);
         System.out.println("Czas zapisu dla Mongo Db: " + duration);
     }
 
