@@ -34,7 +34,7 @@ public class AspectStart {
         joinPoint.proceed();
         double end = currentTimeMillis();
         double duration = (end-start);
-        System.out.println("Czas zapisu dla mogo Db: " +duration);
+        System.out.println("Czas zapisu dla Mongo Db: " + duration);
     }
 
 }

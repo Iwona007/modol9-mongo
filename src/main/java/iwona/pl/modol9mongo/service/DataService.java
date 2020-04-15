@@ -32,15 +32,15 @@ public class DataService {
             read = new BufferedReader(new FileReader(FILENAME));
             while ((nextLine = read.readLine()) != null) {
                 String[] data1 = nextLine.split(",");
-//                Data data = new Data(
-//                data1[0],
-//                        data1[1],
-//                        data1[2],
-//                        data1[3],
-//                        data1[4],
-//                        data1[5]);
-//                dataList.add(data);
-                dataList.add(saveToMongo(data1));
+                Data data = new Data(
+                data1[0],
+                        data1[1],
+                        data1[2],
+                        data1[3],
+                        data1[4],
+                        data1[5]);
+                dataList.add(data);
+//                dataList.add(saveToMongo(data1));
                 line++;
             }
         } catch (IOException e) {
@@ -48,16 +48,16 @@ public class DataService {
         }
     }
 
-    public Data saveToMongo(String[] mongoData) {
-        Data data = new Data();
-        data.setId(mongoData[0]);
-        data.setFirstName(mongoData[1]);
-        data.setLastName(mongoData[2]);
-        data.setEmail(mongoData[3]);
-        data.setGender(mongoData[4]);
-        data.setIpAddress(mongoData[5]);
-        return data;
-    }
+//    public Data saveToMongo(String[] mongoData) {
+//        Data data = new Data();
+//        data.setId(mongoData[0]);
+//        data.setFirstName(mongoData[1]);
+//        data.setLastName(mongoData[2]);
+//        data.setEmail(mongoData[3]);
+//        data.setGender(mongoData[4]);
+//        data.setIpAddress(mongoData[5]);
+//        return data;
+//    }
 
 //    public List<Data> addData() {
 //        return dataRepo.saveAll(dataList);
