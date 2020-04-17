@@ -24,12 +24,9 @@ public class DataService {
 
     @AroundStart
     public void readData() {
-        BufferedReader read = null;
-        String nextLine = null;
-        int line = 0;
-
-        try {
-            read = new BufferedReader(new FileReader(FILENAME));
+        try (BufferedReader read = new BufferedReader(new FileReader(FILENAME))){
+            String nextLine = null;
+            int line = 0;
             while ((nextLine = read.readLine()) != null) {
                 String[] data1 = nextLine.split(",");
                 Data data = new Data(
@@ -48,6 +45,7 @@ public class DataService {
         }
     }
 
+    //to check time between different methods
 //    public Data saveToMongo(String[] mongoData) {
 //        Data data = new Data();
 //        data.setId(mongoData[0]);
