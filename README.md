@@ -9,3 +9,9 @@ Zrób to samo dla operacji wczytywania danych z bazy danych (bez wyświetlania i
  bo to może spowodować przekłamanie wyniku). Odnotuj wynik odczytu.
 Zrealizuj to dla relacyjnej bazy danych i nierelacyjnej bazy danych. 
 Porównaj wyniki, napisz wnioski, podziel się nimi na grupie – zobaczymy komu co udało się osiągnąć.
+
+Technology:
+Java 1.8
+Spring Boot
+NoSql MongoDB
+AOP

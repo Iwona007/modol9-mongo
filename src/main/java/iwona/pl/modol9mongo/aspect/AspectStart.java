@@ -5,7 +5,6 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import static java.lang.System.currentTimeMillis;
@@ -36,5 +35,4 @@ public class AspectStart {
         double duration = (end - start);
         System.out.println("Czas zapisu dla Mongo Db: " + duration);
     }
-
 }

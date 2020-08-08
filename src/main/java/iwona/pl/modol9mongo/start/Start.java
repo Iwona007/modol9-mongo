@@ -23,7 +23,4 @@ public class Start {
         dataService.save(dataService.getDataList()); //103., 348.0, 850.00, 766.0, 691.0
         dataService.findAll();// 51.0, 55.0, 107.0, 45.0, 47.0
     }
-
-
-// czas dla mongo db 862,0 misec sec
 }

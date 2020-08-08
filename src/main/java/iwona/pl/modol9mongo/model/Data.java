@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Data {
-    //id,first_name,last_name,email,gender,ip_address
+
     @Id
     private String id;
     private String firstName;
